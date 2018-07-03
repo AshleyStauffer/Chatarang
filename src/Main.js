@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import Sidebar from "./Sidebar"
-import Chat from "./Chat"
+import Sidebar from './Sidebar'
+import Chat from './Chat'
 
 class Main extends Component {
     render() {
