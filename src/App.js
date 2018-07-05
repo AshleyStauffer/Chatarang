@@ -20,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.login ? (
+        {!this.state.login ? (
           <Main user={this.state.user} />
         ) : (
           <SignIn user={this.state.user}/>
