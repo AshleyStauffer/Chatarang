@@ -1,18 +1,13 @@
 import React from 'react'
 import UserInfo from './UserInfo'
+import RoomList from './RoomList'
 
 const Sidebar = (props) => {
     return (
         <aside className="Sidebar" style={styles.sidebar}>
       <UserInfo user={props.user} />
       <h1 style={styles.h1}>XTBC 18</h1>
-      <nav className="RoomList" style={styles.children}>
-        <h2 style={styles.roomListH2}>Rooms</h2>
-        <ul style={styles.roomListUl}>
-          <li style={styles.roomListLi}><a href="#">general</a></li>
-          <li style={styles.roomListLi}><a href="#">random</a></li>
-        </ul>
-      </nav>
+      <RoomList />
     </aside>
     )
 }
@@ -25,10 +20,6 @@ const styles = {
         padding: '1rem 0',
         display: 'flex',
         flexDirection: 'column',
-    },
-
-    children: {
-        padding: '0 1rem',
     },
           
     h1: {
