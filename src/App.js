@@ -13,25 +13,22 @@ class App extends Component {
         uid: 'SDjkfj',
         displayName: 'Ashley',
         email: 'astauffer@pitt.edu',
-        login: 'false',
+        login: false,
       } 
     }
   }
   render() {
-    if (!this.login) {
-      return (
-        <div className="App">
-          <SignIn user={this.state.user}/>
-        </div>
-        )
-    } else {
-      return (
-        <div className="App">
+    return (
+      <div className="App">
+        {this.state.login ? (
           <Main user={this.state.user} />
-        </div>
+        ) : (
+          <SignIn user={this.state.user}/>
+        )}
+      </div>
       )
     }
   }
-}
+
 
 export default App
