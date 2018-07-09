@@ -1,11 +1,21 @@
 import React from 'react'
 
-const Message = (props) => {
-    return (
-        <div className="Message" style={styles.message}>
-            {props.message.user.displayName}: {props.message.body}
+import Avatar from './Avatar'
+import Metadata from './Metadata'
+
+const Message = ({ message }) => {
+  return (
+    <div style={styles.message}>
+      <Avatar user={message.user} />
+
+      <div style={styles.details}>
+        <Metadata message={message} />
+        <div className="body">
+          {message.body}
         </div>
-    )
+      </div>
+    </div>
+  )
 }
 
 const styles = {
@@ -15,7 +25,7 @@ const styles = {
         padding: '0 1rem',
     },
     details: {
-        flex: '1',
+        flex: 1,
         paddingLeft: '0.5rem',
     },
 }
