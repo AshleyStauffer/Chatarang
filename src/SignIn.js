@@ -19,7 +19,7 @@ class SignIn extends Component {
       })
     })
   }
-  handleChange = (ev) => {
+  /*handleChange = (ev) => {
     this.setState({ email: ev.target.value })
   }
 
@@ -30,7 +30,7 @@ class SignIn extends Component {
       displayName: this.state.email,
       email: this.state.email,
     })
-  }
+  }*/
 
   render() {
     return (
