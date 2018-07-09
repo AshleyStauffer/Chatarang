@@ -12,23 +12,23 @@ const Room = ({ roomName }) => {
 }
 
 const styles = StyleSheet.create({
-  item: {
-    marginBottom: '0.5rem',
-  },
-
-  link: {
-    display: 'block',
-    color: 'whitesmoke',
-    textDecoration: 'none',
-
-    '::before': {
-      content: '"# "',
+    item: {
+        marginBottom: '0.5rem',
     },
 
-    ':hover': {
-      backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    link: {
+        display: 'block',
+        color: 'whitesmoke',
+        textDecoration: 'none',
+
+        '::before': {
+            content: '"# "',
+        },
+
+        ':hover': {
+            backgroundColor: 'rgba(255, 255, 255, 0.2)',
+        },
     },
-  },
 })
 
 export default Room
