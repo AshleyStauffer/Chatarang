@@ -16,7 +16,8 @@ class Chat extends Component {
 
   componentDidMount() {
     this.messagesRef = base.syncState(
-      'messages/general',
+
+      `messages/${this.props.room.name}`,
       {
         context: this,
         state: 'messages',
