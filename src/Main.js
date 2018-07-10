@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 
 import Sidebar from './Sidebar'
 import Chat from './Chat'
@@ -11,7 +11,8 @@ class Main extends Component {
             name: 'general',
             description: 'Chat about stuff',
         },
-        rooms: {}
+        rooms: {},
+        showRoomForm: false,
     }
 
     componentDidMount() {
@@ -44,19 +45,32 @@ class Main extends Component {
         this.setState({ room })
     }
 
+    showRoomForm = () => {
+        this.setState({ showRoomForm: true })
+    }
+
+    hideRoomForm = () => {
+        this.setState({showRoomForm: false })
+    }
     render() {
         return (
             <div className="Main" style={styles}>
-                <Sidebar 
-                    user={this.props.user}
-                    signOut={this.props.signOut}
-                    rooms={this.state.rooms}
-                    setCurrentRoom={this.setCurrentRoom}
-                />
-                <Chat 
-                    user={this.props.user}
-                    room={this.state.room}
-                />
+                {
+                    this.state.showRoomForm
+                        ? <RoomForm addRoom={this.addRoom} />
+                        : <Fragment>
+                            <Sidebar 
+                                user={this.props.user}
+                                signOut={this.props.signOut}
+                                rooms={this.state.rooms}
+                                setCurrentRoom={this.setCurrentRoom}
+                            />
+                            <Chat 
+                                user={this.props.user}
+                                room={this.state.room}
+                            />
+                        </Fragment>
+                }
             </div>
         )
     }
