@@ -7,8 +7,8 @@ import base from './base'
 class Main extends Component {
     state = {
         room: {
-            name: 's3morning',
-            description: 'Ask questions and share code',
+            name: 'general',
+            description: 'Chat about stuff',
         },
         rooms: {}
     }
@@ -33,6 +33,11 @@ class Main extends Component {
         base.removeBinding(this.roomsRef)
     }
 
+    addRoom = room => {
+        const rooms = {...this.state.rooms}
+        rooms[room.name] = room 
+        this.setState({ rooms })
+    }
     setCurrentRoom = roomName => {
         const room = this.state.rooms[roomName]
         this.setState({ room })
