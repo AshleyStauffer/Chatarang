@@ -38,7 +38,9 @@ class Main extends Component {
                 <Sidebar 
                     user={this.props.user}
                     signOut={this.props.signOut}
-                    rooms={this.state.rooms}/>
+                    rooms={this.state.rooms}
+                    setCurrentRoom={this.setCurrentRoom}
+                />
                 <Chat 
                     user={this.props.user}
                     room={this.state.room}
