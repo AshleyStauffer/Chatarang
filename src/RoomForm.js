@@ -17,6 +17,7 @@ class RoomForm extends Component {
     handleSubmit = ev => {
         ev.preventDefault()
         this.props.addRoom(this.state.room)
+        this.props.hideRoomForm()
     }
     render() {
         return(
@@ -51,6 +52,13 @@ class RoomForm extends Component {
                         </p>
 
                         <div>
+                            <button
+                                type="button"
+                                onClick={this.props.hideRoomForm}
+                            >
+                                Cancel
+                            </button>
+
                             <button type="submit">
                                 Create Room
                             </button>
