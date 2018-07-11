@@ -1,30 +1,33 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 import Message from './Message'
 
-const MessageList = ({ messages, room }) => {
-  return (
-    <div
-      className="MessageList"
-      style={styles.messageList}
-    >
+class MessageList extends Component {
+  render() {
+    const { messages, room } = this.props
+    return (
       <div
-        className="roomAnnouncement"
-        style={styles.roomAnnouncement}
+        className="MessageList"
+        style={styles.messageList}
       >
-        <h3 style={styles.h3}>
-          #{room.name}
-        </h3>
-        <p>This is the beginning of the #{room.name} room</p>
-      </div>
+        <div
+          className="roomAnnouncement"
+          style={styles.roomAnnouncement}
+        >
+          <h3 style={styles.h3}>
+            #{room.name}
+          </h3>
+          <p>This is the beginning of the #{room.name} room</p>
+        </div>
 
-      {
-        messages.map(msg => (
-          <Message message={msg} key={msg.id} />
-        ))
-      }
-    </div>
-  )
+        {
+          messages.map(msg => (
+            <Message message={msg} key={msg.id} />
+          ))
+        }
+      </div>
+    )
+  }
 }
 
 const styles = {
